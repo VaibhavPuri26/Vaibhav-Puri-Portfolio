@@ -211,7 +211,7 @@ const Navbar = () => {
           <NavLink href="#education">Education</NavLink>
         </NavItems>
         <ButtonContainer>
-          <GitHubButton>Github Profile</GitHubButton>
+          <GitHubButton href={Bio.github} target="_blank">Github Profile</GitHubButton>
         </ButtonContainer>
       </NavContainer>
       {isOpen && (
@@ -256,19 +256,8 @@ const Navbar = () => {
           >
             Education
           </MobileMenuLink>
-          <GitHubButton
-            style={{
-              padding: "10px 16px",
-              background: `${theme.primary}`,
-              color: "white",
-              width: "max-content",
-            }}
-            href={Bio.github}
-            target="_blank"
-          >
-            Github Profile
-          </GitHubButton>
-        </MobileMenu>
+          <GitHubButton style={{padding: '10px 16px',background: `${theme.primary}`, color: 'white',width: 'max-content'}} href={Bio.github} target="_blank">Github Profile</GitHubButton>
+          </MobileMenu>
       )}
     </Nav>
   );
