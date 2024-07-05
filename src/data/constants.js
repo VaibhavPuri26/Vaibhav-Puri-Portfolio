@@ -309,6 +309,17 @@ export const projects = [
     github: "https://github.com/VaibhavPuri26/ComplaintSystem",
    
   },
+  {
+    id: 3,
+    title: "Book World",
+    date: "June 2024 - July 2024",
+    description:
+      "It is a complaint logger website for a college in which different department complaints are submitted. Admin can see these complaints in an analytical form and can export these complaints to excel.",
+    image:"",
+    tags: ["ReactJS", "NodeJS" , "ExpressJS" , "MongoDb" ,"Stripe"],
+    category: "Working on",
+    github: "https://github.com/VaibhavPuri26/BookStore",
+  }
 ];
 
 export const TimeLineData = [
