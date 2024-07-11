@@ -4,6 +4,7 @@ import styled from "styled-components";
 import Typewriter from "typewriter-effect";
 import HeroImage from "../../images/HomeImage.jpeg";
 import HeroBgAnimation from "../HeroBgAnimation";
+import { motion } from "framer-motion";
 
 const HeroContainer = styled.div`
   background: ${({ theme }) => theme.card_light};
@@ -14,7 +15,7 @@ const HeroContainer = styled.div`
   @media (max-width: 960px) {
     padding: 66px 16px;
   }
-  @media (max-width: 640) {
+  @media (max-width: 640px) {
     padding: 32px 16px;
   }
   z-index: 1;
@@ -59,7 +60,7 @@ const HeroInnerContainer = styled.div`
   }
 `;
 
-const HeroLeftContainer = styled.div`
+const HeroLeftContainer = styled(motion.div)`
   width: 100%;
   order: 1;
   @media (max-width: 960px) {
@@ -79,7 +80,7 @@ const HeroLeftContainer = styled.div`
   }
 `;
 
-const HeroRightContainer = styled.div`
+const HeroRightContainer = styled(motion.div)`
   width: 100%;
   display: flex;
   order: 2;
@@ -214,7 +215,11 @@ const Hero = () => {
           <HeroBgAnimation/>
         </HeroBg>
         <HeroInnerContainer>
-          <HeroLeftContainer>
+          <HeroLeftContainer
+            initial={{ x: '-80vw' }}
+            animate={{ x: 0 }}
+            transition={{ type: 'spring', stiffness: 70 }}
+          >
             <Title>
               Hi, I am <br />
               {Bio.name}
@@ -232,11 +237,14 @@ const Hero = () => {
               </Span>
             </TextLoop>
             <SubTitle>{Bio.description}</SubTitle>
-            <ResumeButton href={Bio.resume} target='display'>Check Resume</ResumeButton>
+            <ResumeButton href={Bio.resume} target='display'> Resume</ResumeButton>
           </HeroLeftContainer>
-          <HeroRightContainer>
- <Image src={HeroImage} alt="VaibhavPuri"/>
-
+          <HeroRightContainer
+            initial={{ x: '80vw' }}
+            animate={{ x: 0 }}
+            transition={{ type: 'spring', stiffness: 70 }}
+          >
+            <Image src={HeroImage} alt="VaibhavPuri"/>
           </HeroRightContainer>
         </HeroInnerContainer>
       </HeroContainer>
