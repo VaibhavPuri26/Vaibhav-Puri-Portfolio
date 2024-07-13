@@ -13,10 +13,11 @@ export const darkTheme = {
 
 export const lightTheme = {
     bg:"#FFFFFF",
-    bgLight: "#f0f0f0",
+    bgLight: "#000000",
     primary:"#be1adb",
-    text_primary:"#111111",
+    text_primary:"#000000",
     text_secondary:"#48494a",
     card:"#FFFFFF",
+    card_light: '#f0f0f0', // lighter gray color
     button:"#5c5b5b",
 }
