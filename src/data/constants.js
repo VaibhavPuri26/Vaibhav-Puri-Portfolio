@@ -5,7 +5,7 @@ export const Bio = {
     "I am a motivated and versatile individual, always eager to embrace new challenges. With a passion for learning, I am committed to delivering high-quality results. My positive attitude and growth mindset drive me to make meaningful contributions and achieve great things.",
   github: "https://github.com/VaibhavPuri26",
   resume:
-    "https://drive.google.com/file/d/1PcY-1vT_k0WpkuL56BoltHEMRs-ONyIL/view",
+    "https://drive.google.com/file/d/1IINYLWEQ4Ux1NndhQmgP4X2Zej5-S3Zk/view?usp=sharing",
   linkedin: "https://www.linkedin.com/in/vaibhavpuri26",
   twitter: "https://x.com/VaibhavPuri8?t=eL69-1WOnswv070WUGRRqA&s=09",
   insta: "https://www.instagram.com/vaibhav_puri26/",
@@ -156,7 +156,7 @@ export const experiences = [
     role: "Web Developer Intern",
     company: "Tech Octanet Services Pvt Ltd",
     date: "June 2024 - Present",
-    desc: "As a web developer at the Tech Octanet Services Pvt Ltd i learned to work with various technologies and build new projects.",
+    desc: "During my tenure at Tech Octanet Services Pvt Ltd as a web developer, I gained experience with diverse technologies and successfully undertook multiple project builds.",
     skills: ["HTML", "CSS", "JavaScript", "ReactJS", "NodeJS", "MongoDb"],
     doc: "https://drive.google.com/file/d/1dpLDzzvw6naxJ-_NXr4qrdCJOYzbtVJY/view?usp=sharing",
   },
@@ -166,7 +166,7 @@ export const experiences = [
     role:"Freelancer",
     company:"Finlink Enterprise",
     date: "July 2024",
-    desc:"As a freelancer i developed a website for a company named Finlink Enterprise.",
+    desc:"I undertook freelance work to develop a comprehensive website for Finlink Enterprise, ensuring it met their specific needs and requirements.",
     skills: [
       "HTML",
       "CSS",
@@ -247,7 +247,7 @@ export const education = [
     school: "G.D Goenka Public School Paschim Vihar",
     date: "Apr 2019 - Apr 2021",
     grade: "80.1% in 10th and 81.2% in 12th",
-    desc: "I completed my schooling from G.G Goenka Public School, where I studied Science with Physical Education.",
+    desc: "I completed my schooling from G.D Goenka Public School, where I studied Science with Physical Education.",
     degree: "CBSE, Science ",
   },
   
@@ -272,7 +272,7 @@ export const projects = [
       "Express Js",
       "Redux",
     ],
-    category: "Working on",
+    category: "Completed",
     github: "https://github.com/VaibhavPuri26/EMS",
     webapp: "https://ss-front-chi.vercel.app/",
   },
@@ -305,7 +305,7 @@ export const projects = [
       "Ejs",
       
     ],
-    category: "Completed",
+    category: "Working on",
     github: "https://github.com/VaibhavPuri26/Temp_Graph",
   },
   {
@@ -348,7 +348,7 @@ export const projects = [
   },
   {
     id: 4 ,
-    title: "Company Website Development",
+    title: "Company Website ",
     date: " July 2024",
     description:
       "I developed a website for Finlink Ent. for listing cars and getting in touch with the buyer and using firebase for google authentication and storing images.",
@@ -356,6 +356,8 @@ export const projects = [
     tags: ["ReactJS", "NodeJS" , "ExpressJS" , "MongoDb" ,"Firebase"],
     category: "Completed",
     github: "https://github.com/VaibhavPuri26/Finlink-Enterprise",
+    webapp: "https://finlink-enterprise.vercel.app/"
+
   }
 ];
 

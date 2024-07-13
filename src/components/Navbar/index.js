@@ -1,7 +1,7 @@
 import React from "react";
 import { Link as LinkR } from "react-router-dom";
 import styled from "styled-components";
-import { FaBars, FaSun, FaMoon, FaGithub } from "react-icons/fa";
+import { FaBars, FaSun, FaMoon, FaGithub , FaLinkedin } from "react-icons/fa";
 import { DiCssdeck } from "react-icons/di";
 import { useTheme } from "styled-components";
 import { Bio } from "../../data/constants";
@@ -39,11 +39,11 @@ const NavLogo = styled(LinkR)`
   justify-content: start;
   align-items: center;
   text-decoration: none;
-  color: ${({ theme }) => theme.text_primary}; /* Set text color based on theme */
+  color: ${({ theme }) => theme.text_primary}; 
   
-  /* Additional styles for icon, adjust as per your actual icon */
+  
   svg {
-    fill: ${({ theme }) => theme.text_primary}; /* Set icon color based on theme */
+    fill: ${({ theme }) => theme.text_primary}; 
   }
 
   @media (max-width: 640px) {
@@ -115,6 +115,22 @@ const MobileButtonContainer = styled.div`
 `;
 
 const GitHubButton = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+  width: 40px;
+  border-radius: 20px;
+  color: ${({ theme }) => theme.primary};
+  cursor: pointer;
+  text-decoration: none;
+  transition: all 0.6s ease-in-out;
+
+  &:hover {
+    color: ${({ theme }) => theme.primary};
+  }
+`;
+const LinkedInButton = styled.a`
   display: flex;
   align-items: center;
   justify-content: center;
@@ -209,6 +225,9 @@ const Navbar = ({ toggleTheme, darkMode }) => {
           <GitHubButton href={Bio.github} target="_blank">
             <FaGithub size="24px" />
           </GitHubButton>
+          <LinkedInButton href= {Bio.linkedin} target="_blank">
+          <FaLinkedin size="24px" />
+          </LinkedInButton>
         </MobileButtonContainer>
         <MobileIcon>
           <FaBars onClick={() => {
@@ -229,6 +248,9 @@ const Navbar = ({ toggleTheme, darkMode }) => {
           <GitHubButton href={Bio.github} target="_blank">
             <FaGithub size="24px" />
           </GitHubButton>
+          <LinkedInButton href= {Bio.linkedin} target="_blank">
+          <FaLinkedin size="24px" />
+          </LinkedInButton>
         </ButtonContainer>
       </NavbarContainer>
       <MobileMenu isOpen={isOpen}>
