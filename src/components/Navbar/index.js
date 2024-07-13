@@ -1,7 +1,7 @@
 import React from "react";
 import { Link as LinkR } from "react-router-dom";
 import styled from "styled-components";
-import { FaBars , FaSun , FaMoon , FaGithub } from "react-icons/fa";
+import { FaBars, FaSun, FaMoon, FaGithub } from "react-icons/fa";
 import { DiCssdeck } from "react-icons/di";
 import { useTheme } from "styled-components";
 import { Bio } from "../../data/constants";
@@ -21,7 +21,6 @@ const Nav = styled.div`
   }
 `;
 
-
 const NavbarContainer = styled.div`
   display: flex;
   justify-content: space-between;
@@ -32,7 +31,6 @@ const NavbarContainer = styled.div`
   padding: 0 24px;
   max-width: 1200px;
 `;
-
 
 const NavLogo = styled(LinkR)`
   width: 80%;
@@ -53,15 +51,12 @@ const NavLogo = styled(LinkR)`
   }
 `;
 
-
 const MobileIcon = styled.div`
   display: none;
   @media screen and (max-width: 768px) {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 60%);
+    display: flex;
+    align-items: center;
+    margin-left: 16px;
     font-size: 1.5rem;
     cursor: pointer;
     color: ${({ theme }) => theme.text_primary};
@@ -110,6 +105,15 @@ const ButtonContainer = styled.div`
   }
 `;
 
+const MobileButtonContainer = styled.div`
+  display: none;
+  @media screen and (max-width: 768px) {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+`;
+
 const GitHubButton = styled.a`
   display: flex;
   align-items: center;
@@ -126,6 +130,7 @@ const GitHubButton = styled.a`
     color: ${({ theme }) => theme.primary};
   }
 `;
+
 const IconButton = styled.button`
   background: none;
   border: none;
@@ -143,8 +148,6 @@ const IconButton = styled.button`
   }
 `;
 
-
-
 const Span = styled.div`
   padding: 0 4px;
   font-weight: bold;
@@ -157,8 +160,8 @@ const MobileMenu = styled.div`
   flex-direction: column;
   justify-content: center;
   gap: 16px;
-  position: absolute; /* Changed from relative to absolute */
-  top: 100%; /* Ensures the menu appears below the hamburger menu */
+  position: absolute;
+  top: 100%;
   left: 0;
   width: 100%;
   padding: 12px 40px 24px 40px;
@@ -187,7 +190,6 @@ const MobileLink = styled.a`
   }
 `;
 
-
 const Navbar = ({ toggleTheme, darkMode }) => {
   const [isOpen, setIsOpen] = React.useState(false);
   const theme = useTheme();
@@ -200,6 +202,14 @@ const Navbar = ({ toggleTheme, darkMode }) => {
             <DiCssdeck size="3rem" /> <Span>Vaibhav Puri</Span>
           </a>
         </NavLogo>
+        <MobileButtonContainer>
+          <IconButton onClick={toggleTheme}>
+            {darkMode ? <FaSun /> : <FaMoon />}
+          </IconButton>
+          <GitHubButton href={Bio.github} target="_blank">
+            <FaGithub size="24px" />
+          </GitHubButton>
+        </MobileButtonContainer>
         <MobileIcon>
           <FaBars onClick={() => {
             setIsOpen(!isOpen);
