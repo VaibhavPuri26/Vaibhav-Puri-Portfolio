@@ -1,6 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 import { skills } from "../../data/constants";
 
 const Container = styled.div`
@@ -65,6 +66,7 @@ const Skill = styled(motion.div)`
   box-shadow: rgba(23, 92, 230, 0.15) 0px 4px 24px;
   border-radius: 16px;
   padding: 18px 36px;
+  will-change: transform;
   @media (max-width: 768px) {
     max-width: 400px;
     padding: 10px 36px;
@@ -115,11 +117,17 @@ const SkillItem = styled.div`
 const SkillImage = styled.img`
   width: 24px;
   height: 24px;
+  loading: lazy;
 `;
 
 const Skills = () => {
+  const { ref, inView } = useInView({
+    triggerOnce: true, // Animation will only trigger once when in view
+    threshold: 0.1,    // Adjust threshold as needed
+  });
+
   return (
-    <Container id="skills">
+    <Container id="skills" ref={ref}>
       <Wrapper>
         <Title>Skills</Title>
         <Desc>Some of my skills on which I have been working on.</Desc>
@@ -128,7 +136,7 @@ const Skills = () => {
             <Skill
               key={skill.title}
               initial={{ x: index % 2 === 0 ? '-100vw' : '100vw' }}
-              animate={{ x: 0 }}
+              animate={inView ? { x: 0 } : {}} 
               transition={{ type: 'spring', stiffness: 120, duration: 2 }}
             >
               <SkillTitle>{skill.title}</SkillTitle>
