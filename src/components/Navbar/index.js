@@ -16,6 +16,8 @@ const Nav = styled.div`
   position: sticky;
   top: 0;
   z-index: 10;
+  overflow-x : hidden;
+  overflow-y : hidden;
   @media (max-width: 960px) {
     transition: 0.8s all ease;
   }
